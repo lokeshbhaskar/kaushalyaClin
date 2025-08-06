@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { services } from "../data/services";
 
 const ServiceDetails = () => {
@@ -6,7 +6,9 @@ const ServiceDetails = () => {
   const service = services.find((s) => s.slug === slug);
 
   if (!service) {
-    return <div className="p-10 text-center text-red-500">Service not found</div>;
+    return (
+      <div className="p-10 text-center text-red-500">Service not found</div>
+    );
   }
 
   const Icon = service.icon;
@@ -28,12 +30,12 @@ const ServiceDetails = () => {
       <Section title="Post-Surgery Care" content={service.post_surgery} />
 
       <div className="mt-8 text-center">
-        <a
-          href="/book-appointment"
+        <Link
+          to="/book-now"
           className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
         >
           {service.call_to_action}
-        </a>
+        </Link>
       </div>
     </div>
   );

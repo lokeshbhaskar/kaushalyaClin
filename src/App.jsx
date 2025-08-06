@@ -8,6 +8,7 @@ import PilesTreatment from "./pages/services/PilesTreatment";
 import WoundCare from "./pages/services/WoundCare";
 import BookNow from "./pages/BookNow";
 import ServiceDetails from "./pages/ServiceDetailPage";
+import DoctorDetails from "./components/DoctorDetails";
 
 function App() {
   return (
@@ -15,12 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={   <Home /> } />
         <Route path="/services/consultation" element={<Consultation />} />
-        {/* <Route path="/services/appendix-removal" element={<AppendixRemoval />} />
-        <Route path="/services/hernia-repair" element={<HerniaRepair />} />
-        <Route path="/services/gallbladder-surgery" element={<GallbladderSurgery />} />
-        <Route path="/services/piles-treatment" element={<PilesTreatment />} />
-        <Route path="/services/wound-care" element={<WoundCare />} />  */}
-        <Route path="/service/book-now" element={ <BookNow /> } />
+       <Route path="/doctor-details" element={ <DoctorDetails /> } />
+        <Route path="/book-now" element={ <BookNow /> } />
          <Route path="/service/:slug" element={<ServiceDetails />} />
       </Routes>
     </div>
