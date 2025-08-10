@@ -11,10 +11,9 @@ const Header = () => {
           className="w-12 h-12 rounded-full border-2 border-yellow-400"
         />
       </div>
-
-      <div className="flex flex-col justify-center h-full mt-3">
-        <h1 className="text-3xl text-gray-100 font-bold">Kaushalya Clinic</h1>
-        <p className="text-lg font-extrabold mt-1 text-green-800">
+      <div className="flex flex-col justify-center h-full mt-3 gap-2">
+        <h1 className="text-4xl text-gray-100 font-bold">Kaushalya Clinic</h1>
+        <p className="text-lg font-extrabold mt-1 text-gray-300">
           Committed to your lifelong health!
         </p>
         <div className="flex items-center gap-1 text-sm mt-2 text-gray-100">

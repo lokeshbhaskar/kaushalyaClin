@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import DoctorCard from "../components/DoctorCard";
 import Services from "../components/Services";
+import AppointmentCalendar from "../components/AppointmentCalendar";
    
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
       </div>
       <h2 className="text-3xl font-semibold mt-8 px-2 text-center">Our Services</h2>
       <Services />
+      <AppointmentCalendar />
     </div>
   );
 };

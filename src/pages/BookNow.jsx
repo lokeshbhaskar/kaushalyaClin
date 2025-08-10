@@ -9,7 +9,7 @@ const BookNow = () => {
         <div className="space-y-4">
           {/* Call Option */}
           <a
-            href="tel:+911234567890"
+            href="tel:+917367848333"
             className="flex items-center justify-center gap-3 bg-teal-600 text-white py-3 px-6 rounded-lg shadow hover:bg-teal-700 transition"
           >
             <PhoneCall /> Call Now
@@ -17,7 +17,7 @@ const BookNow = () => {
 
           {/* WhatsApp Option */}
           <a
-            href="https://wa.me/911234567890?text=Hi%20I%20would%20like%20to%20book%20an%20appointment"
+            href="https://wa.me/917367848333?text=Hi%20I%20would%20like%20to%20book%20an%20appointment"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 bg-green-600 text-white py-3 px-6 rounded-lg shadow hover:bg-green-700 transition"
