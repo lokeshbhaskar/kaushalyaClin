@@ -12,9 +12,7 @@ app.use(express.json());
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
-// console.log("BOT_TOKEN:", BOT_TOKEN);
-// console.log("CHAT_ID:", CHAT_ID);
-
+ 
 
 app.post("/send-appointment", async (req, res) => {
   const { name, address, date } = req.body;
@@ -43,8 +41,8 @@ app.post("/send-appointment", async (req, res) => {
         }),
       }
     );
+
     const data = await response.json();
-     console.log("Telegram API response:", data);
 
     if (!data.ok) {
       return res.status(500).json({ error: "Telegram API error", details: data });
@@ -52,7 +50,6 @@ app.post("/send-appointment", async (req, res) => {
 
     res.json({ success: true });
   } catch (error) {
-    console.log("Error in /send-appointment:", error);
     res.status(500).json({ error: error.message });
   }
 });

@@ -30,6 +30,7 @@ const AppointmentCalendar = () => {
           alert("✅ Appointment booked and doctor notified!");
           setName("");
           setAddress("");
+          setDate(new Date());
         } else {
           alert("❌ Failed to book appointment.");
           console.error(data);
