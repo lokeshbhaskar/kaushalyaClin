@@ -8,7 +8,6 @@ app.use(express.json());
 import dotenv from 'dotenv';
 dotenv.config();
 
-
 // Load your bot token and chat ID from environment variables
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
