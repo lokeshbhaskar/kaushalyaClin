@@ -9,11 +9,10 @@ const Home = () => {
   return (
     <div className="pt-4 px-2">
       <Header name="user" />
-      <div className="px-4 flex flex-col md:flex-row justify-center items-center ">
-        {/* <h2 className="text-xl font-semibold my-4 px-2 text-center">
+       <h2 className="text-xl font-semibold my-4 px-2 text-center">
           Your Health Matters – <br /> Book a Consultation With Our Expert Doctor
-        </h2> */}
-
+        </h2>
+      <div className="px-4 flex flex-col md:flex-row justify-center items-center ">
         <DoctorCard
           name="Dr. Umesh Kumar Sharma"
           qualification="MBBS(MD)"
