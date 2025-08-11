@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 
 const Header = () => {
   return (
-    <div className="bg-gradient-to-br from-teal-800 to-teal-600 text-white px-6  rounded-bl-[60px] rounded-tr-[70px]  mb-6 relative h-64 shadow-lg overflow-hidden">
+    <div className="bg-gradient-to-br from-teal-800 to-teal-600 text-white px-6  rounded-bl-[60px] rounded-tr-[70px]  mb-6 relative h-68 shadow-lg overflow-hidden">
       <div className="absolute top-4 left-8 flex items-center">
         <img
           src={logo}
@@ -24,6 +24,7 @@ const Header = () => {
             <span className="text-md font-medium">Aandar Bazar,Siwan,Bihar</span>
           </a>
         </div>
+          <p className="text-lg  font-medium">Phone: +91 73678 48333</p>
       </div>
     </div>
   );
