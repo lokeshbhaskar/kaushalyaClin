@@ -12,31 +12,28 @@ const AppointmentCalendar = () => {
       alert("⚠️ Please fill in all details before booking.");
       return;
     }
-    const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-    const CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
-    const message = `
-📅 *New Appointment Booked!*
-👤 Name: ${name}
-🏠 Address: ${address}
-📆 Date: ${date.toDateString()}
-🕒 Time: 10:00 AM
-    `;
+    // Prepare the raw appointment data (no message formatting here)
+    const appointmentData = {
+      name,
+      address,
+      date: date.toISOString(),
+    };
 
-    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    fetch("https://kaushalyaclinic1.onrender.com/send-appointment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: message,
-        parse_mode: "Markdown", // makes message bold/italic
-      }),
+      body: JSON.stringify(appointmentData),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Message sent", data);
-        alert("✅ Appointment booked and doctor notified!");
-        setName("");
-        setAddress("");
+        if(data.success){
+          alert("✅ Appointment booked and doctor notified!");
+          setName("");
+          setAddress("");
+        } else {
+          alert("❌ Failed to book appointment.");
+          console.error(data);
+        }
       })
       .catch((err) => {
         console.error("Error sending message", err);
