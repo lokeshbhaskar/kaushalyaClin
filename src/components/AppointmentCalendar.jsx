@@ -12,11 +12,11 @@ const AppointmentCalendar = () => {
       alert("⚠️ Please fill in all details before booking.");
       return;
     }
-    // Prepare the raw appointment data (no message formatting here)
+
     const appointmentData = {
       name,
       address,
-      date: date.toISOString(),
+      date,
     };
 
     fetch("https://kaushalyaclinic1.onrender.com/send-appointment", {
@@ -26,7 +26,7 @@ const AppointmentCalendar = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.success){
+        if (data.success) {
           alert("✅ Appointment booked and doctor notified!");
           setName("");
           setAddress("");
@@ -36,21 +36,17 @@ const AppointmentCalendar = () => {
         }
       })
       .catch((err) => {
-        console.error("Error sending message", err);
-        alert("❌ Failed to send message.");
+        alert("❌ Error sending appointment.");
+        console.error(err);
       });
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <h2 className="text-3xl font-bold mb-6 text-teal-700">
-        Book Your Appointment
-      </h2>
+      <h2 className="text-3xl font-bold mb-6 text-teal-700">Book Your Appointment</h2>
 
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <label className="block mb-2 text-gray-700 font-medium">
-          Patient Name
-        </label>
+        <label className="block mb-2 text-gray-700 font-medium">Patient Name</label>
         <input
           type="text"
           placeholder="Enter your name"
@@ -68,18 +64,11 @@ const AppointmentCalendar = () => {
           className="w-full mb-4 p-2 border border-gray-300 rounded"
         />
 
-        <label className="block mb-2 text-gray-700 font-medium">
-          Select Date
-        </label>
-        <Calendar
-          onChange={setDate}
-          value={date}
-          className="rounded-md border border-gray-300"
-        />
+        <label className="block mb-2 text-gray-700 font-medium">Select Date</label>
+        <Calendar onChange={setDate} value={date} className="rounded-md border border-gray-300" />
 
         <p className="mt-4 text-center text-gray-700 font-medium">
-          Selected Date:{" "}
-          <span className="text-blue-600">{date.toDateString()}</span>
+          Selected Date: <span className="text-blue-600">{date.toDateString()}</span>
         </p>
 
         <button
