@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { toast } from "react-toastify";
 
 const AppointmentCalendar = () => {
   const [date, setDate] = useState(new Date());
@@ -27,7 +28,8 @@ const AppointmentCalendar = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          alert("✅ Appointment booked and doctor notified!");
+          // alert("✅ ");
+          toast.success("Appointment booked and doctor notified!")
           setName("");
           setAddress("");
           setDate(new Date());
@@ -41,7 +43,6 @@ const AppointmentCalendar = () => {
         console.error(err);
       });
   };
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
       <h2 className="text-3xl font-bold mb-6 text-teal-700">Book Your Appointment</h2>

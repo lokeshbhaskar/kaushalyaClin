@@ -9,10 +9,12 @@ import WoundCare from "./pages/services/WoundCare";
 import BookNow from "./pages/BookNow";
 import ServiceDetails from "./pages/ServiceDetailPage";
 import DoctorDetails from "./components/DoctorDetails";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="font-sans bg-gray-50 min-h-screen">
+      <ToastContainer position="top-center" autoClose={3000} />
       <Routes>
         <Route path="/" element={   <Home /> } />
         <Route path="/services/consultation" element={<Consultation />} />

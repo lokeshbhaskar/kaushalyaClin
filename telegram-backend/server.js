@@ -19,7 +19,6 @@ app.post("/send-appointment", async (req, res) => {
   if (!name || !address || !date) {
     return res.status(400).json({ error: "Missing fields" });
   }
-
   const message = `
 📅 *New Appointment Booked!*
 👤 Name: ${name}
