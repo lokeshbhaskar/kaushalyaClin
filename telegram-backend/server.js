@@ -9,11 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKENN;
+const CHAT_ID = process.env.TELEGRAM_CHAT_IDN;
 
 app.post("/send-appointment", async (req, res) => {
-  console.log("Received /send-appointment request:", req.body);
+  // console.log("Received /send-appointment request:", req.body);
   const { name, address, date } = req.body;
 
   if (!name || !address || !date) {
@@ -42,7 +42,7 @@ app.post("/send-appointment", async (req, res) => {
     console.log("Telegram API responded with status:", response.status);
 
     const data = await response.json();
-    console.log("Telegram API response:", data);
+    // console.log("Telegram API response:", data);
 
     if (!data.ok) {
       return res

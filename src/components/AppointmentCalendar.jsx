@@ -13,13 +13,11 @@ const AppointmentCalendar = () => {
       alert("⚠️ Please fill in all details before booking.");
       return;
     }
-
     const appointmentData = {
       name,
       address,
       date,
     };
-
     fetch("https://kaushalyaclinic1.onrender.com/send-appointment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -28,7 +26,6 @@ const AppointmentCalendar = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          // alert("✅ ");
           toast.success("Appointment booked and doctor notified!")
           setName("");
           setAddress("");
@@ -56,7 +53,6 @@ const AppointmentCalendar = () => {
           onChange={(e) => setName(e.target.value)}
           className="w-full mb-4 p-2 border border-gray-300 rounded"
         />
-
         <label className="block mb-2 text-gray-700 font-medium">Address</label>
         <input
           type="text"
