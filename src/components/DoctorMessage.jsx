@@ -2,7 +2,7 @@ import React from "react";
 
 function DoctorMessage(props) {
   return (
-    <div className="max-w-xl mx-auto my-5 p-5 bg-gray-50 border-2 border-green-600 rounded-lg font-sans shadow-md">
+    <div className="max-w-xl mx-auto my-5 p-5 bg-pink-100 border-2 border-green-600 rounded-lg font-sans shadow-md">
       <h2 className="text-green-700 text-xl font-bold mb-2">
         👨‍⚕️ Message from Your Doctor
       </h2>

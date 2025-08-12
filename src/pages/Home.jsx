@@ -7,27 +7,48 @@ import DoctorMessage from "../components/DoctorMessage";
 
 const Home = () => {
   return (
-    <div className="pt-4 px-2">
-      <Header name="user" />
-       <h2 className="text-xl font-semibold my-4 px-2 text-center">
-          Your Health Matters – <br /> Book a Consultation With Our Expert Doctor
+    <div className="   bg-gray-300">
+      {/* Header */}
+      <Header />
+      {/* Intro Section */}
+      <section className="text-center mt-0.5 rounded-xl bg-pink-100 border-t-6 border-t-teal-600 pt-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 leading-snug">
+          Your Health Matters
         </h2>
-      <div className="px-4 flex flex-col md:flex-row justify-center items-center ">
+        <p className="mt-2 pb-4 text-lg text-teal-800">
+          Book a consultation with our experienced doctor and take the first
+          step toward better health.
+        </p>
+      </section>
+      {/* Doctor Section */}
+      <section className="bg-pink-100 mt-1 py-10 flex flex-col md:flex-row justify-center items-stretch gap-6 rounded-xl shadow-sm border-t-6  border-t-teal-600 ">
         <DoctorCard
           name="Dr. Umesh Kumar Sharma"
-          qualification="MBBS(MD)"
           specialty="General Physician"
-          rating={4.62}
-          time="10:00 AM - 6:00 PM"
-          day="Monday-Friday"
+          rating={4.8}
+          qualification="MBBS, MD (Gen)"
           image="/doctor.jpg"
+          experience="15+ Years"
+          languages={["English", "Hindi", "French"]}
+          location="Aandar Bazar, Siwan"
+          contact="dr.sharmaumesh@gmail.com"
+          availability="Mon - Fri, 9:00 AM to 5:00 PM"
         />
-        <DoctorMessage name="Dr. Umesh Kumar Sharma" qualification="MBBS(MD)" />
-      </div>
-      <h2 className="text-3xl font-semibold mt-8 px-2 text-center">
-        Our Services
-      </h2>
-      <Services />
+        <DoctorMessage
+          name="Dr. Umesh Kumar Sharma"
+          qualification="MBBS (MD)"
+        />
+      </section>
+      {/* Services Section */}
+      <section className="py-10 bg-pink-100">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800">
+          Our Services
+        </h2>
+        <p className="text-center text-gray-600 mt-2 mb-6">
+          Comprehensive care for you and your family
+        </p>
+        <Services />
+      </section>
       <AppointmentCalendar />
     </div>
   );
