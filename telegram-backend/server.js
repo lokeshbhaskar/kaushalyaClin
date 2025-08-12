@@ -12,9 +12,8 @@ app.use(express.json());
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
- 
-
 app.post("/send-appointment", async (req, res) => {
+  console.log("Received /send-appointment request:", req.body);
   const { name, address, date } = req.body;
 
   if (!name || !address || !date) {
@@ -27,8 +26,8 @@ app.post("/send-appointment", async (req, res) => {
 🏠 Address: ${address}
 📆 Date: ${new Date(date).toDateString()}
 `;
-
   try {
+    console.log("Sending message to Telegram...");
     const response = await fetch(
       `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
       {
@@ -41,11 +40,15 @@ app.post("/send-appointment", async (req, res) => {
         }),
       }
     );
+    console.log("Telegram API responded with status:", response.status);
 
     const data = await response.json();
+    console.log("Telegram API response:", data);
 
     if (!data.ok) {
-      return res.status(500).json({ error: "Telegram API error", details: data });
+      return res
+        .status(500)
+        .json({ error: "Telegram API error", details: data });
     }
 
     res.json({ success: true });
