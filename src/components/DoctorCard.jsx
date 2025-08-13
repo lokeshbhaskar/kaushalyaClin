@@ -26,7 +26,7 @@ const DoctorCard = ({
   availability
 }) => {
   return (
-    <div className="bg-pink-100 p-6 shadow-md rounded-2xl transition-all duration-300 w-full max-w-lg mx-auto flex flex-col md:flex-row items-center gap-5 border border-gray-100 hover:shadow-xl hover:scale-[1.02]">
+    <div className="bg-pink-100 p-6 shadow-md rounded-2xl transition-all duration-300 w-full max-w-lg mx-auto flex flex-col md:flex-row items-center gap-5 border border-gray-100 hover:shadow-xl hover:scale-[1.02] border-l-2 border-l-teal-400 border-r-2 border-r-teal-400 ">
       
       {/* Doctor Image */}
       <div className="relative flex-shrink-0 flex flex-col items-center">

@@ -4,6 +4,7 @@ import DoctorCard from "../components/DoctorCard";
 import Services from "../components/Services";
 import AppointmentCalendar from "../components/AppointmentCalendar";
 import DoctorMessage from "../components/DoctorMessage";
+import SliderPage from "./SliderPage";
 
 const Home = () => {
   return (
@@ -11,17 +12,18 @@ const Home = () => {
       {/* Header */}
       <Header />
       {/* Intro Section */}
-      <section className="text-center mt-0.5 rounded-xl bg-pink-100 border-t-6 border-t-teal-600 pt-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 leading-snug">
+      <section className="text-center  rounded-xl bg-pink-200 border-t-8 border-t-teal-600 pt-4 ">
+        <h2 className="text-2xl  md:text-3xl font-bold text-gray-800 leading-snug">
           Your Health Matters
         </h2>
-        <p className="mt-2 pb-4 text-lg text-teal-800">
+        <p className="mt-2 px-2 text-lg text-teal-800">
           Book a consultation with our experienced doctor and take the first
           step toward better health.
         </p>
+        <SliderPage />
       </section>
       {/* Doctor Section */}
-      <section className="bg-pink-100 mt-1 py-10 flex flex-col md:flex-row justify-center items-stretch gap-6 rounded-xl shadow-sm border-t-6  border-t-teal-600 ">
+      <section className="bg-pink-100  py-10 flex flex-col md:flex-row justify-center items-stretch gap-6 rounded-xl shadow-lg border-t-8  border-t-teal-600 ">
         <DoctorCard
           name="Dr. Umesh Kumar Sharma"
           specialty="General Physician"

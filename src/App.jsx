@@ -19,14 +19,14 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000);
   }, []);
   if (loading) {
     return <Loader />;
   }
   return (
     <div className="font-sans bg-gray-50 min-h-screen">
-      <ToastContainer position="top-center" autoClose={3000} />
+      <ToastContainer position="bottom-center" autoClose={3000} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services/consultation" element={<Consultation />} />
