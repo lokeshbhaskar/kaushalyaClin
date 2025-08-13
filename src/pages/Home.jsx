@@ -5,6 +5,7 @@ import Services from "../components/Services";
 import AppointmentCalendar from "../components/AppointmentCalendar";
 import DoctorMessage from "../components/DoctorMessage";
 import SliderPage from "./SliderPage";
+import MovingText from "../components/MovingText";
 
 const Home = () => {
   return (
@@ -16,7 +17,8 @@ const Home = () => {
         <h2 className="text-2xl  md:text-3xl font-bold text-gray-800 leading-snug">
           Your Health Matters
         </h2>
-        <p className="mt-2 px-2 text-lg text-teal-800">
+        <MovingText />
+        <p className="mt-2 mb-2 px-2 text-xl text-teal-800 font-medium">
           Book a consultation with our experienced doctor and take the first
           step toward better health.
         </p>
