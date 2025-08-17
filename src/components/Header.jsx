@@ -1,11 +1,12 @@
 import { MapPin, Phone, HeartPulse, Clock } from "lucide-react";
 import logo from "../assets/logo.png";
+import MovingText from "./MovingText";
 
 const Header = () => {
   return (
     <div className="relative  overflow-hidden">
       {/* Animated Wave Background */}
-      <div className="absolute left-0 right-0 bottom-0 z-0 overflow-hidden h-[80px] rounded-bl-[60px] rounded-tr-[70px] ">
+      <div className="absolute left-0 right-0 bottom-0 z-0 overflow-hidden h-[80px]  ">
         <svg
           className="wave wave1"
           viewBox="0 0 1440 320"
@@ -31,13 +32,13 @@ const Header = () => {
       </div>
 
       {/* Main Header Content */}
-      <div className="bg-[#6F5CC4]/90 text-white px-6 py-6 rounded-bl-[60px] rounded-tr-[70px] shadow-xl relative">
+      <div className="bg-[#6F5CC4]/90 text-white px-6 py-6  shadow-xl relative">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
           {/* Left - Logo + Clinic Info */}
           <div className="flex items-center gap-4">
             <img
-              src={logo}
-              alt="Kaushalya Clinic Logo"
+              src="/logo.jpg"
+              alt="Kaushalya-Clinic-Logo"
               className="w-16 h-16 rounded-full border-2 border-yellow-400 shadow-md"
             />
             <div>
@@ -90,6 +91,7 @@ const Header = () => {
             </p>
           </div>
         </div>
+       
       </div>
     </div>
   );

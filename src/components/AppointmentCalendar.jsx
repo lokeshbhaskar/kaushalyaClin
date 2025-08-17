@@ -45,7 +45,7 @@ const AppointmentCalendar = () => {
     }, 3000);
   };
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4 rounded-2xl ">
       <h2 className="text-3xl font-bold mb-6 text-teal-700">
         Book Your Appointment
       </h2>

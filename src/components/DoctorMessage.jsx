@@ -2,8 +2,8 @@ import React from "react";
 
 function DoctorMessage(props) {
   return (
-    <div className="max-w-xl mx-auto my-5 p-5 bg-pink-100 border-2 border-green-600 rounded-lg font-sans shadow-md">
-      <h2 className="text-green-700 text-xl font-bold mb-2">
+    <div className="w-full my-5 p-5 bg-pink-100  rounded-3xl font-sans shadow-md">
+      <h2 className="text-green-700 text-3xl text-center font-bold mb-2">
         👨‍⚕️ Message from Your Doctor
       </h2>
       <p className="text-base mb-4">
@@ -38,7 +38,7 @@ function DoctorMessage(props) {
       <p className="mt-4">
         Remember, these small steps will help you live a long and healthy life.
       </p>
-      <p className="font-bold mt-3">
+      <p className="font-bold mt-3 text-end">
         Wishing you good health,  
         <br /> {props.name} <span className="font-medium">-{props.qualification}</span>
       </p>

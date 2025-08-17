@@ -10,7 +10,6 @@ const ServiceDetails = () => {
       <div className="p-10 text-center text-red-500">Service not found</div>
     );
   }
-
   const Icon = service.icon;
 
   return (
