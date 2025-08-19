@@ -148,7 +148,7 @@
   border-bottom-color: #14b8a6; /* teal */
   border-right-color: #e503da; /* purple */
   animation: borderGrow 0.8s ease forwards;
-  animation-delay: 4  s; /* starts after top-left finishes */
+  animation-delay: 4s; /* starts after top-left finishes */
 }
 
 @keyframes borderGrow {
