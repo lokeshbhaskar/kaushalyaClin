@@ -38,7 +38,7 @@ const DoctorCard = ({
           <div className="flex flex-col md:flex-row items-center gap-6 pb-5">
             {/* Image */}
             <div className="relative">
-              <div className="p-[3px] rounded-full bg-gradient-to-tr from-teal-400 to-teal-600">
+              <div className="p-[3px] rounded-full bg-gradient-to-tr from-[#facc15] to-[#22d3ee]">
                 <img
                   src={image}
                   alt={name}
@@ -82,12 +82,12 @@ const DoctorCard = ({
           <div className="mt-5 space-y-3 text-gray-700">
             <p className="flex items-center gap-2">
               <GraduationCap className="w-5 h-5 text-green-600" />
-              <span className="font-medium">{qualification}</span>
+              <span className="font-medium hover-underline">{qualification}</span>
             </p>
 
             <p className="flex items-center gap-2">
               <Briefcase className="w-5 h-5 text-indigo-500" />
-              <span>{experience} Experience</span>
+              <span className="hover-underline">{experience} Experience</span>
             </p>
 
             {languages && languages.length > 0 && (
@@ -96,7 +96,7 @@ const DoctorCard = ({
                 {languages.map((lang, idx) => (
                   <span
                     key={idx}
-                    className="bg-teal-50 text-teal-700 text-xs px-2 py-1 rounded-full"
+                    className="bg-teal-50 text-teal-700 text-xs px-2 py-1 rounded-full hover-underline"
                   >
                     {lang}
                   </span>
@@ -106,13 +106,13 @@ const DoctorCard = ({
 
             <p className="flex items-center gap-2">
               <CalendarDays className="w-5 h-5 text-yellow-600" />
-              <span>{availability}</span>
+              <span className="hover-underline">{availability}</span>
             </p>
 
             {time && day && (
               <p className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-pink-600" />
-                <span>
+                <span className="hover-underline">
                   {day}, {time}
                 </span>
               </p>
@@ -120,12 +120,12 @@ const DoctorCard = ({
 
             <p className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-red-500" />
-              <span>{location}</span>
+              <span className="hover-underline">{location}</span>
             </p>
 
             <p className="flex items-center gap-2">
               <Mail className="w-5 h-5 text-pink-500" />
-              <span>{contact}</span>
+              <span className="hover-underline">{contact}</span>
             </p>
           </div>
         </div>

@@ -41,18 +41,18 @@ const Header = () => {
               alt="Kaushalya-Clinic-Logo"
               className="w-16 h-16 rounded-full border-2 border-yellow-400 shadow-md"
             />
-            <div>
-              <h1 className="text-2xl font-extrabold tracking-wide">
+            <div className="text-center space-y-2">
+              <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-yellow-300 via-cyan-300 to-teal-200 bg-clip-text text-transparent drop-shadow-lg hover-underline">
                 Kaushalya Clinic
               </h1>
-              <p className="text-sm text-gray-200">
+              <p className="text-lg text-center text-gray-100 font-medium italic hover-underline">
                 Committed to your lifelong health
               </p>
             </div>
           </div>
 
           {/* Center - Timings & Services */}
-          <div className="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg text-center">
+          <div className="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg text-center hover-border">
             <p className="flex items-center justify-center gap-2 text-lg font-medium">
               <Clock className="w-5 h-5 text-yellow-300" />
               Mon–Sat:{" "}
@@ -64,7 +64,6 @@ const Header = () => {
               🩺 Same-day appointments available
             </p>
           </div>
-
           {/* Right - Address & Contact */}
           <div className="text-center md:text-right space-y-1">
             <div className="flex md:justify-end justify-center items-center gap-2">
@@ -91,7 +90,6 @@ const Header = () => {
             </p>
           </div>
         </div>
-       
       </div>
     </div>
   );
