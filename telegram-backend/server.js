@@ -2,21 +2,28 @@ import express from "express";
 import cors from "cors";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import connectDb from "./config/db.js";
 
 dotenv.config();
+
+// import paymentRoute from "./routes/paymentRoute.js";
+
+// connectDb();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// app.use("/payment", paymentRoute);
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKENN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_IDN;
 
 app.post("/send-appointment", async (req, res) => {
   // console.log("Received /send-appointment request:", req.body);
-  const { name, address, date } = req.body;
+  const { name, address, date, phone } = req.body;
 
-  if (!name || !address || !date) {
+  if (!name || !address || !date || !phone) {
     return res.status(400).json({ error: "Missing fields" });
   }
   const message = `
@@ -24,6 +31,7 @@ app.post("/send-appointment", async (req, res) => {
 👤 Name: ${name}
 🏠 Address: ${address}
 📆 Date: ${new Date(date).toDateString()}
+    Phone: ${phone}
 `;
   try {
     console.log("Sending message to Telegram...");

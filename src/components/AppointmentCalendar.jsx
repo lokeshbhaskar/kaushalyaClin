@@ -6,16 +6,16 @@ import { toast } from "react-toastify";
 const AppointmentCalendar = () => {
   const [date, setDate] = useState(new Date());
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const sendToDoctor = () => {
-    if (!name || !address) {
-      toast.error("Please fill the all requirements")
+  const sendToDoctor = async () => {
+    if (!name || !address || !phone) {
+      toast.error("Please fill the all requirements");
       return;
     }
     setLoading(true);
-
     setTimeout(() => {
       const appointmentData = { name, address, date };
       fetch("https://kaushalyaclinic1.onrender.com/send-appointment", {
@@ -71,7 +71,17 @@ const AppointmentCalendar = () => {
           disabled={loading}
           className="w-full mb-4 p-2 border border-gray-300 rounded"
         />
-
+        <label className="block mb-2 text-gray-700 font-medium">Phone</label>
+        <input
+          type="tel"
+          inputMode="tel"
+          pattern="[0-9]{10}"
+          placeholder="Enter your phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          disabled={loading}
+          className="w-full mb-4 p-2 border border-gray-300 rounded"
+        />
         <label className="block mb-2 text-gray-700 font-medium">
           Select Date
         </label>
@@ -94,18 +104,19 @@ const AppointmentCalendar = () => {
             </p>
           </div>
         )}
-
-        <button
-          onClick={sendToDoctor}
-          disabled={loading}
-          className={`mt-6 w-full text-white py-2 px-4 rounded transition ${
-            loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-teal-600 hover:bg-teal-700"
-          }`}
-        >
-          {loading ? "Processing..." : "Book Appointment"}
-        </button>
+        <div className="flex justify-center items-center">
+          <button
+            onClick={sendToDoctor}
+            disabled={loading}
+            className={`mt-6 text-white text-md py-2 px-6 font-semibold rounded-lg transition cursor-pointer ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-teal-600 hover:bg-teal-700"
+            }`}
+          >
+            {loading ? "Processing..." : "Book"}
+          </button>
+        </div>
       </div>
     </div>
   );

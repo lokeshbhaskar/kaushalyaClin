@@ -6,14 +6,26 @@ import AppointmentCalendar from "../components/AppointmentCalendar";
 import DoctorMessage from "../components/DoctorMessage";
 import SliderPage from "./SliderPage";
 import MovingText from "../components/MovingText";
+import { AnimatePresence , motion} from "framer-motion";
 
 const Home = () => {
   return (
-    <div className=" bg-gray-300 ">
+    <div className=" bg-white ">
+        <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 3, ease: "easeInOut" }}
+        >
+          
+        </motion.div>
+      </AnimatePresence>
       {/* Header */}
       <Header />
       {/* Doctor Section */}
-      <section className="bg-pink-200  py-10 flex flex-col md:flex-row justify-center items-stretch gap-6  shadow-lg border-t-5  border-t-teal-600 ">
+      <section className="  py-10 flex flex-col md:flex-row justify-center items-stretch gap-6   ">
         <DoctorCard
           name="Dr. Umesh Kumar Sharma"
           specialty="General Physician"
@@ -29,7 +41,7 @@ const Home = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="text-center   bg-pink-200 border-t-6 border-t-yellow-600 pt-4 ">
+      <section className="text-center   pt-4 ">
         <h2 className="text-2xl  md:text-3xl font-bold text-gray-800 leading-snug">
           Your Health Matters
         </h2>
@@ -42,7 +54,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-10 bg-pink-100">
+      <section className="py-10">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800">
           Our Services
         </h2>
@@ -52,10 +64,10 @@ const Home = () => {
         <Services />
       </section>
       {/* doctor message */}
-      <section className="bg-pink-200 shadow-lg border-t-5  border-t-teal-600 p-5">
+      <section className=" shadow-lg border-t-5  border-t-teal-600 p-5">
         <DoctorMessage
           name="Dr. Umesh Kumar Sharma"
-          qualification="MBBS (MD)"
+          qualification="MBBS(MD)"
         />
       </section>
       <AppointmentCalendar />

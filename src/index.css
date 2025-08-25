@@ -120,7 +120,6 @@
   display: inline-block;
   cursor: pointer;
 }
-
 .hover-border::before,
 .hover-border::after {
   content: "";
